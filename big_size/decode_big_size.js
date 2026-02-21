@@ -1,4 +1,4 @@
-const BN = require('bn.js');
+import BN from 'bn.js';
 
 const hexAsBuffer = hex => Buffer.from(hex, 'hex');
 const isHex = n => !!n && !(n.length % 2) && /^[0-9A-F]*$/i.test(n);
@@ -30,7 +30,7 @@ const uint64Length = 9;
     length: <Encoding Byte Length Number>
   }
 */
-module.exports = ({encoded}) => {
+export default ({encoded}) => {
   if (!isHex(encoded)) {
     throw new Error('ExpectedHexEncodedBigSizeValueToDecode');
   }

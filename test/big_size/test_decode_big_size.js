@@ -1,8 +1,6 @@
-const {deepStrictEqual} = require('node:assert').strict;
-const test = require('node:test');
-const {throws} = require('node:assert').strict;
-
-const {decodeBigSize} = require('./../../');
+import { deepStrictEqual, throws } from 'node:assert';
+import test from 'node:test';
+import { decodeBigSize } from './../../index.js';
 
 const tests = [
   {
@@ -97,9 +95,9 @@ const tests = [
   },
 ];
 
-tests.forEach(({args, description, error, expected}) => {
-  return test(description, (t, end) => {
-    if (!!error) {
+for (const { args, description, error, expected } of tests) {
+  test(description, (t, end) => {
+    if (error) {
       throws(() => decodeBigSize(args), new Error(error), 'Got error');
     } else {
       const value = decodeBigSize(args);
@@ -110,4 +108,4 @@ tests.forEach(({args, description, error, expected}) => {
 
     return end();
   });
-});
+}

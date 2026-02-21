@@ -1,4 +1,4 @@
-const decodeTlvStream = require('./decode_tlv_stream');
-const encodeTlvStream = require('./encode_tlv_stream');
+import decodeTlvStream from './decode_tlv_stream.js';
+import encodeTlvStream from './encode_tlv_stream.js';
 
-module.exports = {decodeTlvStream, encodeTlvStream};
+export { decodeTlvStream, encodeTlvStream };

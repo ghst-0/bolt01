@@ -1,4 +1,4 @@
-const BN = require('bn.js');
+import BN from 'bn.js';
 
 const max8BitNumber = BigInt(0xfc);
 const max16BitNumber = BigInt(0xffff);
@@ -22,7 +22,7 @@ const tagAsUint64 = n => `ff${new BN(n).toString(16, 16)}`;
     encoded: <BigSize Encoded Value Hex String>
   }
 */
-module.exports = ({number}) => {
+export default ({number}) => {
   if (!number) {
     throw new Error('ExpectedNumberToEncodeAsBigSize');
   }

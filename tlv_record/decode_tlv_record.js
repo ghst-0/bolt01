@@ -1,7 +1,7 @@
-const {decodeBigSize} = require('./../big_size');
+import { decodeBigSize } from './../big_size/index.js';
 
-const hexLen = byteLength => !byteLength ? 0 : byteLength * 2;
-const read = (from, hex, to) => hex.slice(from, !to ? undefined : to + from);
+const hexLen = byteLength => byteLength ? byteLength * 2 : 0;
+const read = (from, hex, to) => hex.slice(from, to ? to + from : undefined);
 
 /** Decode an encoded TLV record
 
@@ -20,7 +20,7 @@ const read = (from, hex, to) => hex.slice(from, !to ? undefined : to + from);
     value: <Raw Value Hex String>
   }
 */
-module.exports = ({encoded, offset}) => {
+export default ({encoded, offset}) => {
   // Start position in the hex
   const start = hexLen(offset);
 

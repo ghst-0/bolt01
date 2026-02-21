@@ -1,3 +1,3 @@
-const sortByBigInt = require('./sort_by_big_int');
+import sortByBigInt from './sort_by_big_int.js';
 
-module.exports = {sortByBigInt};
+export { sortByBigInt };

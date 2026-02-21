@@ -1,5 +1,5 @@
-const {encodeTlvRecord} = require('./../tlv_record');
-const {sortByBigInt} = require('./../arrays');
+import { encodeTlvRecord } from './../tlv_record/index.js';
+import { sortByBigInt } from './../arrays/index.js';
 
 const attribute = 'type';
 const {isArray} = Array;
@@ -23,7 +23,7 @@ const uniq = arr => Array.from(new Set(arr));
     encoded: <TLV Records Stream Hex Encoded String>
   }
 */
-module.exports = ({records}) => {
+export default ({records}) => {
   // Exit with error when no records are provided
   if (!isArray(records)) {
     throw new Error('ExpectedArrayOfRecordsToEncodeTlvStream');

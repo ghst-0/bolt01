@@ -1,4 +1,4 @@
-const {decodeTlvRecord} = require('./../tlv_record');
+import { decodeTlvRecord } from './../tlv_record/index.js';
 
 const byteLength = hex => hex.length / 2;
 const isHex = n => !(n.length % 2) && /^[0-9A-F]*$/i.test(n);
@@ -20,7 +20,7 @@ const isHex = n => !(n.length % 2) && /^[0-9A-F]*$/i.test(n);
     }]
   }
 */
-module.exports = ({encoded}) => {
+export default ({encoded}) => {
   // Exit with error when no stream is provided
   if (!isHex(encoded)) {
     throw new Error('ExpectedHexEncodedTlvStreamToDecode');

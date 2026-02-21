@@ -1,15 +1,12 @@
-const {decodeBigSize} = require('./big_size');
-const {decodeTlvRecord} = require('./tlv_record');
-const {decodeTlvStream} = require('./tlv_stream');
-const {encodeBigSize} = require('./big_size');
-const {encodeTlvRecord} = require('./tlv_record');
-const {encodeTlvStream} = require('./tlv_stream');
+import { decodeBigSize, encodeBigSize } from './big_size/index.js';
+import { decodeTlvRecord, encodeTlvRecord } from './tlv_record/index.js';
+import { decodeTlvStream, encodeTlvStream } from './tlv_stream/index.js';
 
-module.exports = {
+export {
   decodeBigSize,
   decodeTlvRecord,
   decodeTlvStream,
   encodeBigSize,
   encodeTlvRecord,
-  encodeTlvStream,
+  encodeTlvStream
 };

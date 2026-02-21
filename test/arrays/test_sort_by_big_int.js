@@ -1,8 +1,6 @@
-const {deepStrictEqual} = require('node:assert').strict;
-const test = require('node:test');
-const {throws} = require('node:assert').strict;
-
-const {sortByBigInt} = require('./../../arrays');
+import { deepStrictEqual, throws } from 'node:assert';
+import test from 'node:test';
+import { sortByBigInt } from './../../arrays/index.js';
 
 const tests = [
   {
@@ -32,9 +30,9 @@ const tests = [
   },
 ];
 
-tests.forEach(({args, description, error, expected}) => {
-  return test(description, (t, end) => {
-    if (!!error) {
+for (const { args, description, error, expected } of tests) {
+  test(description, (t, end) => {
+    if (error) {
       throws(() => sortByBigInt(args), new Error(error), 'Got expected error');
     } else {
       const {sorted} = sortByBigInt(args);
@@ -44,4 +42,4 @@ tests.forEach(({args, description, error, expected}) => {
 
     return end();
   });
-});
+}

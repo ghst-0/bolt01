@@ -7,7 +7,7 @@
     "url": "https://github.com/alexbosworth/bolt01/issues"
   },
   "dependencies": {
-    "bn.js": "5.2.1"
+    "bn.js": "5.2.3"
   },
   "description": "Lightning Network BOLT-01 methods",
   "engines": {
@@ -16,6 +16,7 @@
   "keywords": [
     "lightning-network"
   ],
+  "type": "module",
   "license": "MIT",
   "main": "index.js",
   "name": "bolt01",
@@ -24,7 +25,7 @@
     "url": "https://github.com/alexbosworth/bolt01.git"
   },
   "scripts": {
-    "test": "npx nyc@15.1.0 node --experimental-test-coverage --test test/arrays/*.js test/big_size/*.js test/tlv_record/*.js test/tlv_stream/*.js"
+    "test": "node --experimental-test-coverage --test test/arrays/*.js test/big_size/*.js test/tlv_record/*.js test/tlv_stream/*.js"
   },
   "version": "2.0.0"
 }

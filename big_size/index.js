@@ -1,4 +1,4 @@
-const decodeBigSize = require('./decode_big_size');
-const encodeBigSize = require('./encode_big_size');
+import decodeBigSize from './decode_big_size.js';
+import encodeBigSize from './encode_big_size.js';
 
-module.exports = {decodeBigSize, encodeBigSize};
+export { decodeBigSize, encodeBigSize };

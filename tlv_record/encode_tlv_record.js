@@ -1,4 +1,4 @@
-const {encodeBigSize} = require('./../big_size');
+import { encodeBigSize } from './../big_size/index.js';
 
 const byteLengthOf = hex => hex.length / 2;
 const encode = (type, len, val) => [type, len, val].join('');
@@ -19,7 +19,7 @@ const isHex = n => !(n.length % 2) && /^[0-9A-F]*$/i.test(n);
     encoded: <Encoded TLV Record Hex String>
   }
 */
-module.exports = ({type, value}) => {
+export default ({type, value}) => {
   if (!isHex(value)) {
     throw new Error('ExpectedHexEncodedValueToEncodeTlvRecord');
   }
