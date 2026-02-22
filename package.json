@@ -11,7 +11,7 @@
   },
   "description": "Lightning Network BOLT-01 methods",
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "keywords": [
     "lightning-network"
